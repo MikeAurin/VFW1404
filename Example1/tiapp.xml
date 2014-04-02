@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ti:app xmlns:ti="http://ti.appcelerator.org">
-    <id>com.MikeAurin.Example</id>
+    <id>com.MikeAurin.VFW</id>
     <name>Example1</name>
     <version>1.0</version>
     <publisher>MikeAurin</publisher>
@@ -11,7 +11,7 @@
     <fullscreen>false</fullscreen>
     <navbar-hidden>false</navbar-hidden>
     <analytics>true</analytics>
-    <guid>a155e4a9-ff7e-4842-96a3-0c308f614f20</guid>
+    <guid>7db227f6-b041-430d-95ff-3c325a308df5</guid>
     <property name="ti.ui.defaultunit" type="string">dp</property>
     <ios>
         <plist>
