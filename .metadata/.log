@@ -6720,3 +6720,9 @@ org.eclipse.core.internal.resources.ResourceException: Resource '/VFW Week 1 Not
 	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:121)
 !SUBENTRY 1 org.eclipse.core.resources 4 372 2014-04-02 15:11:16.832
 !MESSAGE Resource '/VFW Week 1 Notes' is not open.
+
+!ENTRY org.eclipse.e4.ui.css.core 4 0 2014-04-02 15:29:59.391
+!MESSAGE CSS property 'maximize-visible' has been deprecated: renamed as swt-maximize-visible
+
+!ENTRY org.eclipse.e4.ui.css.core 4 0 2014-04-02 15:29:59.391
+!MESSAGE CSS property 'minimize-visible' has been deprecated: renamed as swt-minimize-visible
