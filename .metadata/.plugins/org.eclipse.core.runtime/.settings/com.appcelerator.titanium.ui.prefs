@@ -2,9 +2,11 @@
 Android\ Emulator\ Process\:ConsoleLogLevel=Info
 Aurin_Mike_GoToWeek1\:launchMode=run
 Aurin_Mike_GoToWeek1\:launchShortcut=com.appcelerator.titanium.mobile.ui.android.device.launchShortcut
+Aurin_Mike_Project1\:launchMode=run
+Aurin_Mike_Project1\:launchShortcut=com.appcelerator.titanium.mobile.ui.android.device.launchShortcut
 GoTo\ Week\ 1\ Code\:launchMode=run
 GoTo\ Week\ 1\ Code\:launchShortcut=com.appcelerator.titanium.mobile.ui.android.device.launchShortcut
-LAST_LAUNCH_TIMESTAMP=1396399890757
+LAST_LAUNCH_TIMESTAMP=1396465659042
 Test\:launchMode=run
 Test\:launchShortcut=com.appcelerator.titanium.mobile.ui.android.device.launchShortcut
 VFW\ Test\ Project\:launchMode=run

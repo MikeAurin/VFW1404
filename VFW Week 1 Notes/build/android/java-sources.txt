@@ -1,5 +1,0 @@
-"/Users/MikeAurin/Desktop/VFWProjects/VFW Week 1 Notes/build/android/gen/vfw/week1/ApplicationStylesheet.java"
-"/Users/MikeAurin/Desktop/VFWProjects/VFW Week 1 Notes/build/android/gen/vfw/week1/R.java"
-"/Users/MikeAurin/Desktop/VFWProjects/VFW Week 1 Notes/build/android/gen/vfw/week1/VfwWeek1NotesActivity.java"
-"/Users/MikeAurin/Desktop/VFWProjects/VFW Week 1 Notes/build/android/gen/vfw/week1/VfwWeek1NotesAppInfo.java"
-"/Users/MikeAurin/Desktop/VFWProjects/VFW Week 1 Notes/build/android/gen/vfw/week1/VfwWeek1NotesApplication.java"
