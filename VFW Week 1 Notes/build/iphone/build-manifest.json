@@ -1,0 +1,23 @@
+{
+	"target": "simulator",
+	"deployType": "development",
+	"deviceFamily": "universal",
+	"iosSdkPath": "/Users/MikeAurin/Library/Application Support/Titanium/mobilesdk/osx/3.2.2.GA/iphone",
+	"tiCoreHash": "77157e1ffaec640cf559356a147b6a4c",
+	"modulesHash": "d41d8cd98f00b204e9800998ecf8427e",
+	"modulesNativeHash": "d41d8cd98f00b204e9800998ecf8427e",
+	"gitHash": "96e9a07",
+	"name": "VFW Week 1 Notes",
+	"id": "vfw.week1",
+	"analytics": true,
+	"publisher": "MikeAurin",
+	"url": "http://",
+	"version": "1.0",
+	"description": "VFW Week 1 Notes",
+	"copyright": "2014 by MikeAurin",
+	"guid": "b57c8949-9358-4b0d-bb1d-04bc1e459d09",
+	"skipJSMinification": true,
+	"forceCopy": false,
+	"forceCopyAll": false,
+	"encryptJS": false
+}

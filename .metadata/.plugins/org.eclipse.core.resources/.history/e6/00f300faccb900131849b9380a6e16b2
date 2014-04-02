@@ -1,0 +1,27 @@
+
+// This is a generic template for a window and a tab
+ 
+ var window1 = Ti.UI.createWindow({
+ 	title: "Tab 1",
+ 	backgroundColor: "#fff"
+ });
+ 
+ var label1 = Ti.UI.createLabel ({
+ 	color: "#999",
+ 	text: "This is Window 1",
+ 	font:{fontSize: 20, fontFamily: "Helvetica Neue"},
+ 	textAlign: "center",
+ 	width: "auto"	
+ });
+ 
+var tabGroup = Ti.UI.createTabGroup();
+
+var tab1 = Ti.UI.createTab({
+	title: "Tab 1",
+	window: window1
+
+});
+
+window1.add(label1);
+window1.open();
+
