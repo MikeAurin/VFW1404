@@ -63,6 +63,9 @@ var backButton = Ti.UI.createView({
 
 var goBack = function(){	
 	albumText.text = albumList[5];
+	if (albumText.text < albumList[5]{
+		albumText.text = albumList[4]
+	};
 };
 	
 	appWindow.add(albumText);
@@ -88,13 +91,6 @@ var nextButton = Ti.UI.createView({
 	borderRadius: 20,
 	backgroundColor: "green"
 });
-
-var goForward = function(){	
-	albumText.text = albumList[0];
-};
-	
-nextButton.addEventListener("click", goForward);
-
 
 appWindow.open();
 
