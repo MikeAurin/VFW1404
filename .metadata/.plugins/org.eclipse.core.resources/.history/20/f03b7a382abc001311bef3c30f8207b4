@@ -61,11 +61,13 @@ var backButton = Ti.UI.createView({
 	backgroundColor: "red"
 });
 
-var changeText = function(){	
+var changeText = function(){
+	albumText.hide();
+	
 	albumText.text = albumList[0];
-	if (albumList = [0]) {
-		albumText.text = albumList[6];
-	};
+		if (albumList = [1]) {
+			albumText.text = albumList[5];
+		}
 	};
 	
 	appWindow.add(albumText);
