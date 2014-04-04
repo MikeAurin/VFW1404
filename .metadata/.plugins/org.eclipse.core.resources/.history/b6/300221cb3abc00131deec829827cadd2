@@ -64,11 +64,7 @@ var backButton = Ti.UI.createView({
 });
 
 var goBack = function(){
-          albumText.text = albumList[counter];
-    if (counter === 0){
-        counter = albumList.length - 1;
-    }
-    else {counter = counter - 1};
+      albumText.text = albumList[5];
 };
 
 	appWindow.add(albumText);

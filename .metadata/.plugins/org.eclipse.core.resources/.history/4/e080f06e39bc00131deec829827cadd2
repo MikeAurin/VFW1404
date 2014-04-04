@@ -64,12 +64,13 @@ var backButton = Ti.UI.createView({
 });
 
 var goBack = function(){
-          albumText.text = albumList[counter];
-    if (counter === 0){
-        counter = albumList.length - 1;
+        console.log (counter);
+    albumText.text=albumList[counter];
+    if (counter === albumList.length-1){
+        counter=0;  
     }
-    else {counter = counter - 1};
-};
+    else {counter=counter+1};
+};      
 
 	appWindow.add(albumText);
 
@@ -96,15 +97,9 @@ var nextButton = Ti.UI.createView({
 });
 
 var goForward = function(){	
-	  console.log (counter);
-    albumText.text=albumList[counter];
-    if (counter === albumList.length-1){
-        counter=0;  
-    }
-    else {counter=counter+1};    
+	albumText.text = albumList[0];
 };
 
-	
 nextButton.addEventListener("click", goForward);
 
 

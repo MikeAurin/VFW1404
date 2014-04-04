@@ -6,8 +6,6 @@ var albumList = ["Sounding the Seventh Trumpet",
 				 "Avenged Sevenfold", 
 				 "Nightmare", 
 				 "Hail to the King"];
-				 
-var counter = 0;
 
 var appWindow = Ti.UI.createWindow({
 	backgroundColor: "black",
@@ -63,12 +61,10 @@ var backButton = Ti.UI.createView({
 	backgroundColor: "red"
 });
 
-var goBack = function(){
-          albumText.text = albumList[counter];
-    if (counter === 0){
-        counter = albumList.length - 1;
-    }
-    else {counter = counter - 1};
+var goBack = function(){	
+	var i;
+	albumText.text = albumList[5];
+	albumList[i]--;
 };
 
 	appWindow.add(albumText);
@@ -96,17 +92,10 @@ var nextButton = Ti.UI.createView({
 });
 
 var goForward = function(){	
-	  console.log (counter);
-    albumText.text=albumList[counter];
-    if (counter === albumList.length-1){
-        counter=0;  
-    }
-    else {counter=counter+1};    
+	albumText.text = albumList[0];
 };
 
-	
 nextButton.addEventListener("click", goForward);
-
 
 
 appWindow.open();
