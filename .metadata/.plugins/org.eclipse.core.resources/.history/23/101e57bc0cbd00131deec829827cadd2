@@ -1,4 +1,4 @@
-Ti.UI.setBackgroundColor("white");
+Ti.UI.setBackgroundColor("#white");
 
 
 var appWindow = Ti.UI.createWindow({
@@ -49,7 +49,7 @@ var albumText = Ti.UI.createLabel({
 var backButton = Ti.UI.createView({
 	left: 20,
 	width: 130, 
-	height: 50,
+	height: 100,
 	bottom: 20,
 	borderRadius: 20,
 	backgroundColor: "#CC0000"
@@ -70,7 +70,7 @@ var nextText = Ti.UI.createLabel({
 var nextButton = Ti.UI.createView({
 	right: 20,
 	width: 130,
-	height: 50,
+	height: 100,
 	bottom: 20,
 	borderRadius: 20,
 	backgroundColor: "#009933"

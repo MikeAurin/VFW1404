@@ -1,4 +1,4 @@
-Ti.UI.setBackgroundColor("white");
+Ti.UI.setBackgroundColor("#white");
 
 
 var appWindow = Ti.UI.createWindow({

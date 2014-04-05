@@ -1,5 +1,13 @@
-Ti.UI.setBackgroundColor("white");
+Ti.UI.setBackgroundColor("#white");
 
+var albumList = ["Sounding the Seventh Trumpet",
+				 "Waking the Fallen", 
+				 "City of Evil",
+				 "Avenged Sevenfold", 
+				 "Nightmare", 
+				 "Hail to the King"];
+				 
+var counter = 0;
 
 var appWindow = Ti.UI.createWindow({
 	backgroundColor: "black",
@@ -7,19 +15,19 @@ var appWindow = Ti.UI.createWindow({
 });
 
 var titleView = Ti.UI.createView({
-	backgroundColor: "black",
+	backgroundColor: "white",
 	height: 40,
 	top : 20,
-	left: 0,
-	right: 0,
+	left: 20,
+	right: 20,
 	borderRadius: 2,
-	
+	borderColor: "red",
 });
 
 var titleText = Ti.UI.createLabel({
 	text: "Avenged Sevenfold Albums",
-	color: "White",
-	font: {fontSize: 22, fontFamily: "Palatino", fontWeight: "bold"},
+	color: "Black",
+	font: {fontSize: 18, fontFamily: "Palatino", fontWeight: "bold"},
 	align: "center"
 });
 
@@ -49,12 +57,23 @@ var albumText = Ti.UI.createLabel({
 var backButton = Ti.UI.createView({
 	left: 20,
 	width: 130, 
-	height: 50,
+	height: 100,
 	bottom: 20,
 	borderRadius: 20,
-	backgroundColor: "#CC0000"
+	backgroundColor: "red"
 });
 
+var goBack = function(){
+          albumText.text = albumList[counter];
+    if (counter === 0){
+        counter = albumList.length - 1;
+    }
+    else {counter = counter - 1};
+};
+
+	appWindow.add(albumText);
+
+backButton.addEventListener("click", goBack);
 
 var previousText = Ti.UI.createLabel({
 	text: "Previous Album",
@@ -70,13 +89,25 @@ var nextText = Ti.UI.createLabel({
 var nextButton = Ti.UI.createView({
 	right: 20,
 	width: 130,
-	height: 50,
+	height: 100,
 	bottom: 20,
 	borderRadius: 20,
-	backgroundColor: "#009933"
+	backgroundColor: "green"
 });
 
-var loadAlbum = require("albums");
+var goForward = function(){	
+	  console.log (counter);
+    albumText.text=albumList[counter];
+    if (counter === albumList.length-1){
+        counter = 0;  
+    }
+    else {counter = counter + 1};    
+};
+
+	
+nextButton.addEventListener("click", goForward);
+
+
 
 appWindow.open();
 
