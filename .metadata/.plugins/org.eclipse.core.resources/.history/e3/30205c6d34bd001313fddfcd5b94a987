@@ -10,7 +10,7 @@ var counter = 0;
 var goBack = function(){
 	albumText.text = albumList[counter];
     if (counter === 0){
-        counter = albumList.length - 1;
+        counter = albumList.length;
     }
     else {counter = counter - 1};
 };
@@ -22,7 +22,7 @@ backButton.addEventListener("click", goBack);
 var goForward = function(){	
 	  console.log (counter);
     albumText.text = albumList[counter];
-    if (counter === albumList.length - 1 ){
+    if (counter === albumList.length - 1){
         counter = 0;  
     }
     else {counter = counter + 1};    

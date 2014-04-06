@@ -22,7 +22,7 @@ backButton.addEventListener("click", goBack);
 var goForward = function(){	
 	  console.log (counter);
     albumText.text = albumList[counter];
-    if (counter === albumList.length - 1 ){
+    if (counter === albumList.length){
         counter = 0;  
     }
     else {counter = counter + 1};    
