@@ -47,7 +47,7 @@ var bands = {
 
 for(var i in bands){
 	console.log(bands[i].headTitle);
-	for(var n=0, p=bands[i].members.length; n<p; i++){
+	for(var n = 0, p = bands[i].members.length; n < p; i++){
 		console.log(bands[i].members[p]);
 	});
 	
