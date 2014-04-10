@@ -24,6 +24,8 @@ var titleLabel = Ti.UI.createLabel({
 	textAlign: "center"
 });
 
+var loadBands = require("bands");
+
 titleView.add(titleLabel);
 mainWindow.add(titleView, border);
 mainWindow.open();
