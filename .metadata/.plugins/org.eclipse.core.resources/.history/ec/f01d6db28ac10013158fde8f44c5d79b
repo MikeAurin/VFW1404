@@ -1,0 +1,213 @@
+var bands = {
+	"band1":{
+		"headTitle": "Avenged Sevenfold",
+		"footTitle": "Orange County metal band",
+		"members": [
+			{
+				"M.Shadows": "Lead singer.  Known for raspy yet powerful vocals."
+			},
+			{
+				"Synyster Gates": "Lead guitarist.  Known for fast and technical solos."
+			},
+			{
+				"Zacky Vengeance": "Rhymthm guitarist and backup vocals.  Capable of tight rhythm guitar as well as harmonizing many solos and guitar riffs with Synester Gates."
+			},
+			{
+				"Johnny Christ": "Bassist and backup vocals.  Plays deep, powerful grooves as well as adding complexity and melody to riffs."
+			},
+			{
+				"Arin Iljeay": "Drummer.  New comer to the band, took over for the band after passing of the original drummer Jimmy 'The Rev' Sullivan."
+			}
+		]
+	},
+	"band2": {
+		"headTitle": "A Day to Remember",
+		"footTitle": "Ocala based pop-punk band.",
+		"members": [
+			{
+				"name": "Jermey Mckinnon",
+				"info": "Lead Singer.  Has a diverse range of high clean notes to deep, thunderous screams."
+			},
+			{
+				"name": "Neil Westfall",
+				"info": "Rhythm Guitarist and backup vocals.  Known for quick punk riffs as well as supplemental screaming during live shows."
+			},
+			{
+				"name": "Kevin Skaff",
+				"info": "Lead Guitarist and backup vocals.  Plays lead melodic riffs as well as provides additional clean vocals on albums and live shows."
+			},
+			{
+				"name": "Joshua Woodard",
+				"info": "Bassist.  Consistent with breakdowns and rhythm sections."
+			},
+			{
+				"name": "Alex Shelnutt",
+				"info": "Drummer.  Fast punk drummer with a proficiency in double bass fills."
+			}
+		]
+	}
+};
+
+var mainWindow = Ti.UI.createWindow({
+	title: "Band Members",
+	backgroundColor: "black"
+});
+
+var getInfo = function(){
+	var bandWindow = Ti.UI.createWindow({
+		});
+	bandWindow.open();
+};
+
+
+
+var appInterface = function(){
+	var spacing = 50;
+	for(n in bands){
+		var titleLabel = Ti.UI.createLabel({
+			text: bands[n].headTitle,
+			left: 20,
+			right: 20,
+			top: spacing,
+			height: 20,
+			backgroundColor: "#333",
+			font: {fontFamily: "Verdana", fontSize: 16},
+			color: "#fafafa"
+		});
+		spacing = titleLabel.top + titleLabel.height + 10;
+		console.log(spacing);
+		for(m in bands[n].members){
+			var itemLabel = Ti.UI.createLabel({
+				text: bands[n].members[m].name,
+				details: bands[n].members.info,
+				left: 30,
+				right: 15,
+				top: spacing,
+				height: 25,
+				backgroundColor: "#ffffff",
+				font: {fontFamily: "Verdana", fontSize: 20},
+				color: "#333"
+			});
+			itemLabel.addEventListener("click", getInfo);
+			
+			
+			mainWindow.add(itemLabel);
+			spacing = itemLabel.top + itemLabel.height + 10;
+		}	
+		mainWindow.add(titleLabel);
+		spacing = itemLabel.top + itemLabel.height + 30;
+	}
+};
+
+/*
+var bands = {
+	"band1": {
+		"headtitle": "Avenged Sevenfold",
+		"footTitle": "Orange County Metal Band",
+		"members": [
+			{
+				"name": "M. Shadows", 
+				"info": "Lead Singer.  Known for his raspy yet powerful vocals"
+			}, 
+			{
+				"name": "Synyster Gates", 
+				"info": "Lead guitarist and backup vocalist.  Known for technical solos and melodic riffs."
+			}, 
+			{
+				"name": "Zacky Vengeance",
+				"info": "Rhythm guitarist and backup vocalist.  Capable of tight and fast riffs and harmonizing with lead guitar parts. "
+			}, 
+			{
+				"name": "Johnny Christ",
+				"info": "Bassist.  Contributes heavy grooves as well as intricate undertones to the rhythm section."
+			}, 
+			{
+				"name": "Arin Iljey", 
+				"info": "Drummer.  New-comer to the band.  Filled in for the late Jimmy 'The Rev' Sullivan."
+			}, 
+		]
+	},
+	"band2": {
+		"headTitle": "A Day To Remember",
+		"footTitle": "Ocala Based Pop-Punk Band",
+		"members":	[
+			{
+				"name": "Jeremey McKinnon", 
+				"info": "Lead Singer.  Capable of hitting clean high notes as well as low screams."
+			}, 
+			{
+				"name": "Neil Westfall",
+				"info": "Rhythm guitarist and backup vocalist.  Plays fast punk inspired rhythm sections while contributing back up screams during live shows."
+			},
+			{
+				"name": "Joshua Woodard",
+				"info": "Bassist.  Contributes to the heavy tones of the rhythm section."
+			},
+			{
+				"name": "Kevin Skaff", 
+				"info": "Lead guitarist and backup vocalist.  Plays the melodic section of songs and aids Jeremy with clean vocals both in the studio and on live shows."
+			},
+			{
+				"name": "Alex Shelnut", 
+				"info": "Drummer.  Adds fast punk fills with metal influenced double bass beats."
+			}
+		]
+	}
+};
+
+
+var getInfo = function(){
+	var bandWindow = Ti.UI.createWindow({
+		title: this.text
+	});
+	var detailText = Ti.UI.createLAbel({
+		text: this.details,
+		top: 30,
+		left: 15,
+		right: 15
+	});
+	bandWindow.add(detailText);
+	navWindow.openWindow(bandWindow);
+};
+
+var appInterface = function(){
+	var spacing = 50;
+	for(n in bands){
+		var titleLabel = Ti.UI.createLabel({
+			text: bands[n].headTitle,
+			left: 20,
+			right: 20,
+			top: spacing,
+			height: 20,
+			backgroundColor: "#333",
+			font: {fontFamily: "Verdana", fontSize: 16},
+			color: "#fafafa"
+		});
+		spacing = titleLabel.top + titleLabel.height + 10;
+		console.log(spacing);
+		for(m in bands[n].members){
+			var itemLabel = Ti.UI.createLabel({
+				text: bands[n].members[m].name,
+				details: bands[n].members[m].info,
+				left: 30,
+				right: 15,
+				top: spacing,
+				height: 25,
+				backgroundColor: "#ffffff",
+				font: {fontFamily: "Verdana", fontSize: 20},
+				color: "#333"
+			});
+			
+			mainWindow.add(itemLabel);
+			spacing = itemLabel.top + itemLabel.height + 10;
+			itemLabel.addEventListener("click", getInfo);
+		}	
+		mainWindow.add(titleLabel);
+		spacing = itemLabel.top + itemLabel.height + 30;
+	}
+};
+
+appInterface();
+
+navWindow.open();
+

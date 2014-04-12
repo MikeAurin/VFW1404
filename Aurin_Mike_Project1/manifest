@@ -3,6 +3,6 @@
 #url:http://
 #image:appicon.png
 #appid:com.AurinMike.VFW1404
-#desc:not specified
+#desc:An application utilizing a counter going forwards and backwards and repeating when it gets to the end of the array without casuing an error.
 #type:ipad
 #guid:5db8923b-a695-452c-8ddb-c3ebf0550528

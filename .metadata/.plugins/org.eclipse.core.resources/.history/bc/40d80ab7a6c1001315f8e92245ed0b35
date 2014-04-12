@@ -1,0 +1,137 @@
+Ti.UI.setBackgroundColor("#000");
+
+var bands = {
+	"sevenfold": {
+		"headTitle": "Avenged Sevenfold",
+		"footTitle": "Orange County Metal Band",
+		"members": [
+			{
+				"name": "M. Shadows", 
+				"info": "Lead Singer.  Known for his raspy yet powerful vocals"
+			}, 
+			{
+				"name": "Synyster Gates", 
+				"info": "Lead guitarist and backup vocalist.  Known for technical solos and melodic riffs."
+			}, 
+			{
+				"name": "Zacky Vengeance",
+				"info": "Rhythm guitarist and backup vocalist.  Capable of tight and fast riffs and harmonizing with lead guitar parts. "
+			}, 
+			{
+				"name": "Johnny Christ",
+				"info": "Bassist.  Contributes heavy grooves as well as intricate undertones to the rhythm section."
+			}, 
+			{
+				"name": "Arin Iljey", 
+				"info": "Drummer.  New-comer to the band.  Filled in for the late Jimmy 'The Rev' Sullivan."
+			}, 
+		]
+	},
+	"adtr": {
+		"headTitle": "A Day To Remember",
+		"footTitle": "Ocala Based Pop-Punk Band",
+		"members":	[
+			{
+				"name": "Jeremey McKinnon", 
+				"info": "Lead Singer.  Capable of hitting clean high notes as well as low screams."
+			}, 
+			{
+				"name": "Neil Westfall",
+				"info": "Rhythm guitarist and backup vocalist.  Plays fast punk inspired rhythm sections while contributing back up screams during live shows."
+			},
+			{
+				"name": "Joshua Woodard",
+				"info": "Bassist.  Contributes to the heavy tones of the rhythm section."
+			},
+			{
+				"name": "Kevin Skaff", 
+				"info": "Lead guitarist and backup vocalist.  Plays the melodic section of songs and aids Jeremy with clean vocals both in the studio and on live shows."
+			},
+			{
+				"name": "Alex Shelnut", 
+				"info": "Drummer.  Adds fast punk fills with metal influenced double bass beats."
+			}
+		]
+	}
+};
+
+
+var mainWindow = Ti.UI.createWindow({
+	title: "Band Members",
+	backgroundColor: "#dadada"
+});
+
+var navWindow = Ti.UI.iOS.createNavigationWindow({
+	window: mainWindow	
+});
+
+//Table View
+var bandsTable = Ti.UI.createTableView({
+	top: 20
+});
+
+//Table View Section
+var sevenfoldSection = Ti.UI.createTableViewSection({
+	headerTitle: "Avenged Sevenfold",
+	footerTitle: "Orange County Metal Band"
+});
+
+var adtrSection = Ti.UI.createTableViewSection({
+	headerTitle: "A Day to Remember",
+	footerTitle: "Ocala Based Pop-punk band"
+});
+
+var getDetail = function(){
+	var detailWindow = Ti.UI.createWindow({
+		title: this.text,
+		backgroundColor: "white"
+	});
+	var detailText = Ti.UI.createLabel({
+		text: this.details,
+		top: 30,
+		left: 15,
+		right: 15
+	});
+	detailWindow.add(detailText);
+	navWindow.openWindow(detailWindow);
+};
+
+var makeUI = function(){
+	var spacing = 40;
+	for(n in bands){
+		var titleLabel = Ti.UI.createLabel({
+			text: bands[n].headTitle,
+			left: 0,
+			right: 0,
+			top: spacing,
+			height: 25,
+			textAlign: "center",
+			backgroundColor: "#333",
+			font: {fontSize: 22, fontFamily: "Verdana"},
+			color: "#fafafa"
+		});
+		spacing = titleLabel.top + titleLabel.height + 10;
+		for(m in bands[n].members){
+			var itemLabel = Ti.UI.createLabel({
+				text: bands[n].members[m].name,
+				details: bands[n].members[m].info,
+				left: 30,
+				right: 30,
+				top: spacing,
+				height: 25,
+				backgroundColor: "#ffffff",
+				font: {fontSize: 22, fontFamily: "Verdana"},
+				color: "#333"
+			});
+			mainWindow.add(itemLabel);
+			spacing = itemLabel.top + itemLabel.height + 10;
+			itemLabel.addEventListener("click", getDetail);
+		}
+		mainWindow.add(titleLabel);
+		spacing = itemLabel.top + itemLabel.height + 40;
+	}
+};
+
+makeUI();
+
+navWindow.open();

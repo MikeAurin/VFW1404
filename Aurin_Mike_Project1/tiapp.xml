@@ -5,7 +5,7 @@
     <version>1.0</version>
     <publisher>MikeAurin</publisher>
     <url>http://</url>
-    <description>not specified</description>
+    <description>An application utilizing a counter going forwards and backwards and repeating when it gets to the end of the array without casuing an error.</description>
     <copyright>2014 by MikeAurin</copyright>
     <icon>deathbat.png</icon>
     <fullscreen>false</fullscreen>
