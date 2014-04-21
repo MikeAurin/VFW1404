@@ -23870,3 +23870,12 @@ java.net.UnknownHostException: studio.appcelerator.com
 	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:636)
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:591)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1450)
+
+!ENTRY com.aptana.core 4 1 2014-04-21 16:26:45.772
+!MESSAGE To git@github.com:MikeAurin/VFW1404.git
+ ! [rejected]        master -> master (non-fast-forward)
+error: failed to push some refs to 'git@github.com:MikeAurin/VFW1404.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Integrate the remote changes (e.g.
+hint: 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
