@@ -1,0 +1,19 @@
+Ti.UI.setBackgroundColor("#fff");
+
+var mainWindow = Ti.UI.createWindow({
+	backgroundImage: ("iphonebg.jpg")
+});
+
+var title = Ti.UI.createLabel({
+	top: 40,
+	backgroundColor: "#fff",
+	left: 30,
+	right: 30,
+	height: 40,
+	text: "My Gallery",
+	font: {fontFamily: "Verdana", fontSize: 18,},
+	textAlign: "center"
+});
+
+mainWindow.add(title);
+mainWindow.open();

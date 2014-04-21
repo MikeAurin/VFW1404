@@ -1,0 +1,56 @@
+
+var mainWindow = Ti.UI.createWindow({
+	title: "Mike's First Gallery",
+	backgroundImage: ("iphonebg.jpg")
+});
+
+var navWindow = Ti.UI.iOS.createNavigationWindow({
+	window: mainWindow
+});
+
+var openGallery = function(){
+	var pWidth = Ti.Platform.displayCaps.platformWidth;
+	var pHeight = Ti.Platform.displayCaps.platformHeight;
+	var itemCount = 15;
+	var rowCount = 3;
+	var margin = 10;
+	var mainGallery = Ti.UI.createWindow({
+		title: "Gallery",
+		backgroundImage: "iphonebg.jpg",
+	});
+	navWindow.openWindow(mainGallery);
+	var galleryContainer = Ti.UI.createView({
+		width: pWidth,
+		color: "#fef"
+	});
+	navWindow.open(galleryContainer);
+};
+
+var titleImage = Ti.UI.createView({
+	backgroundImage: "cover.jpg",
+	borderRadius: 8,
+	top: 20,
+	left: 30,
+	right: 30,
+	bottom: 120
+});
+
+var beginButton = Ti.UI.createLabel({
+	height: 40,
+	bottom: 30,
+	left: 30,
+	right: 30,
+	height: 50,
+	borderRadius: 10,
+	backgroundColor: "#c42332",
+	text: "Start Gallery",
+	font: {fontFamily: "Verdana", fontSize: 30, fontWeight: "bold"},
+	color: "#fff",
+	textAlign: "center"
+});
+
+beginButton.addEventListener("click", openGallery);
+
+mainWindow.add(beginButton);
+mainWindow.add(titleImage);
+navWindow.open();
