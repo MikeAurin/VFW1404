@@ -1,7 +1,0 @@
-Ti.UI.setBackgroundColor("red");
-
-var mainWindow = Ti.UI.createWindow({
-	backgroundColor: ("white")
-});
-
-mainWindow.open();

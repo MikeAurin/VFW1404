@@ -100,7 +100,11 @@ viewContainer = Ti.UI.createScrollView({
 var getImage = function(){
 	var imageWindow = Ti.UI.createWindow({
 		backgroundColor: "#fff",
-		backgroundImage: "proj3images/" + imageFiles[i],
+		image: "proj3images/" + imageFiles[i],
+		top: 10,
+		left: 10,
+		right: 10,
+		bottom: 10
 	});
 	
 	imageWindow.open();
