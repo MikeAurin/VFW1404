@@ -71,19 +71,13 @@ var imageFiles = imagesFolder.getDirectoryListing();
 console.log(imageFiles);
 
 var mainWin = Ti.UI.createWindow({
-	backgroundColor: "#fff",
 	layout: "horizontal",
-	title: "Images"
-});
-
-var navWindow = Ti.UI.iOS.createNavigationWindow({
-	window: mainWin,
-	top: 0
+	title: "Image Gallery",
 });
 
 var border = Ti.UI.createView({
 	backgroundColor: "#cecece",
-	height: 1,
+	height: 20,
 	top: 0
 });
 
@@ -91,24 +85,25 @@ viewContainer = Ti.UI.createScrollView({
 	top: 0,
 	layout: "horizontal",
 	width: pWidth,
-	height: pHeight-border.top-border.height,
+	height: pHeight-border.height-border.top,
 	contentWidth: pWidth,
 	showVerticalScrollIndicator: true,
-	backgroundColor: "black"
+	backgroundColor: "#cecece"
 });
 
 var getImage = function(){
-	var imageWindow = Ti.UI.createWindow({
-		backgroundColor: "#fff",
-		backgroundImage: "proj3images/" + imageFiles[i],
+	var imageWindow = Ti.UI.createImageView({
+		backgroundColor: "#cecece",
+		image: "proj3images/" + imageFiles[i],
 	});
 	
 	imageWindow.open();
+
 };
 
 for(var i=0; i<imageFiles.length; i++){
 	var view = Ti.UI.createView({
-		backgroundColor: "black",
+		backgroundColor: "#cecece",
 		top: 10,
 		left: 10,
 		width: size,
@@ -116,7 +111,6 @@ for(var i=0; i<imageFiles.length; i++){
 	});
 	var thumb = Ti.UI.createImageView({
 		image: "proj3images/" + imageFiles[i],
-		top: 0,
 		width: view.width*2
 	});
 	
@@ -125,7 +119,6 @@ for(var i=0; i<imageFiles.length; i++){
 	thumb.addEventListener("click", getImage); 
 }
 
-mainWin.add(border);
-mainWin.add(viewContainer);
+mainWin.add(border, viewContainer);
 mainWin.open();
-navWindow.open(mainWin);
+
