@@ -3,7 +3,8 @@ var pHeight = Ti.Platform.displayCaps.platformHeight;
 var rowCount = 3;
 var margin = 10;
 var trueCanvasWidth = (pWidth - (margin * 2)) - rowCount;
-var size = ((pHeight - trueCanvasWidth)/rowCount);
+var size = 67;
+//var size = ((pHeight - trueCanvasWidth)/rowCount);
 var imagesFolder = Ti.Filesystem.getFile(Ti.Filesystem.resourcesDirectory, "proj3images");
 var imageFiles = imagesFolder.getDirectoryListing();
 
@@ -14,39 +15,60 @@ var mainWin = Ti.UI.createWindow({
 	title: "Image Gallery",
 });
 
+var navWindow = Ti.UI.iOS.createNavigationWindow({
+	window: mainWin
+});
+
 var border = Ti.UI.createView({
 	backgroundColor: "#cecece",
-	height: 20,
+	height: 0,
 	top: 0
 });
-
-viewContainer = Ti.UI.createScrollView({
-	top: 0,
-	layout: "horizontal",
-	width: pWidth,
-	height: pHeight-border.height-border.top,
-	contentWidth: pWidth,
-	showVerticalScrollIndicator: true,
-	backgroundColor: "#cecece"
-});
-
 var backButton = Ti.UI.createLabel({
-	top: 0,
+	bottom: 0,
 	height: 50,
 	width: "100%",
-	backgroundColor: "grey",
+	backgroundColor: "black",
 	text: "Close Gallery",
 	color: "white",
 	textAlign: "center"
 });
 
-var getImage = function(){
-	var imageWindow = Ti.UI.createImageView({
-		backgroundColor: "#cecece",
-		image: this.image
-	});
+var closeGallery = function(){
+	var startOver = require("app");
+	navWindow.close();
+};
 
-	viewContainer.add(imageWindow);
+backButton.addEventListener("click", closeGallery);
+navWindow.add(backButton);
+
+var viewContainer = Ti.UI.createScrollView({
+	top: 0,
+	layout: "horizontal",
+	width: pWidth,
+	height: pHeight-border.height-border.top-backButton.height-60,
+	contentWidth: pWidth,
+	showVerticalScrollIndicator: true,
+	backgroundColor: "#cecece"
+});
+
+mainWin.add(border, viewContainer);
+
+var getImage = function(){
+	var imageWindow = Ti.UI.createWindow({
+		title: this.image,
+		backgroundColor: "#cecece"
+	});
+	var myImage = Ti.UI.createImageView({
+		image: this.image,
+		top: 10,
+		left: 10,
+		right: 10,
+		bottom: 10
+	});
+	
+	mainWin.add(imageWindow, myImage);
+	navWindow.openWindow(imageWindow);	
 
 };
 
@@ -68,5 +90,5 @@ for(var i=0; i<imageFiles.length; i++){
 	thumb.addEventListener("click", getImage); 
 }
 
-mainWin.add(border, viewContainer);
-mainWin.open();
+navWindow.add(mainWin);
+navWindow.open();

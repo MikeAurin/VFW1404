@@ -50,7 +50,7 @@ var viewContainer = Ti.UI.createScrollView({
 	height: pHeight-border.height-border.top-backButton.height-60,
 	contentWidth: pWidth,
 	showVerticalScrollIndicator: true,
-	backgroundColor: "#fff"
+	backgroundColor: "#cecece"
 });
 
 mainWin.add(border, viewContainer);
@@ -62,10 +62,9 @@ var getImage = function(){
 	});
 	var myImage = Ti.UI.createImageView({
 		image: this.image,
-		top: 0,
-		left: 0, 
-		right: 0,
-		bottom: 0
+		top: 10,
+		width: "100%",
+		align: "center"
 });
 	
 	mainWin.add(imageWindow, myImage);

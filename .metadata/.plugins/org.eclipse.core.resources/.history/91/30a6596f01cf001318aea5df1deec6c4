@@ -19,12 +19,6 @@ var navWindow = Ti.UI.iOS.createNavigationWindow({
 	window: mainWin
 });
 
-var border = Ti.UI.createView({
-	backgroundColor: "#cecece",
-	height: 0,
-	top: 0
-});
-
 var backButton = Ti.UI.createLabel({
 	bottom: 0,
 	height: 50,
@@ -50,7 +44,7 @@ var viewContainer = Ti.UI.createScrollView({
 	height: pHeight-border.height-border.top-backButton.height-60,
 	contentWidth: pWidth,
 	showVerticalScrollIndicator: true,
-	backgroundColor: "#fff"
+	backgroundColor: "#cecece"
 });
 
 mainWin.add(border, viewContainer);
@@ -63,10 +57,10 @@ var getImage = function(){
 	var myImage = Ti.UI.createImageView({
 		image: this.image,
 		top: 0,
-		left: 0, 
+		left: 0,
 		right: 0,
 		bottom: 0
-});
+	});
 	
 	mainWin.add(imageWindow, myImage);
 	imageWindow.add(myImage);

@@ -50,7 +50,7 @@ var viewContainer = Ti.UI.createScrollView({
 	height: pHeight-border.height-border.top-backButton.height-60,
 	contentWidth: pWidth,
 	showVerticalScrollIndicator: true,
-	backgroundColor: "#fff"
+	backgroundColor: "#cecece"
 });
 
 mainWin.add(border, viewContainer);
