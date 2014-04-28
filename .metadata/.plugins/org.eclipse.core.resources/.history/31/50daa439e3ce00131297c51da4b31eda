@@ -55,20 +55,14 @@ backButton.addEventListener("click", closeGallery);
 navWindow.add(backButton);
 
 var getImage = function(){
-	var imageWindow = Ti.UI.createWindow({
-		title: this.image,
-		backgroundColor: "#cecece"
+	var imageWindow = Ti.UI.createImageView({
+		backgroundColor: "#cecece",
+		image: this.image
 	});
-	var image = Ti.UI.createImageView({
-		image: this.image,
-		top: 10,
-		left: 10,
-		right: 10,
-		bottom: 10
-	});
+
+	viewContainer.add(imageWindow);
+	imageWindow.open();
 	
-	mainWin.add(image);
-	navWindow.openWindow(imageWindow);	
 
 };
 

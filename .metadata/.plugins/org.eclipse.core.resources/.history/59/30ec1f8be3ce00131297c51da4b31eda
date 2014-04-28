@@ -54,17 +54,15 @@ var closeGallery = function(){
 backButton.addEventListener("click", closeGallery);
 navWindow.add(backButton);
 
-var getImage = function(){
+var getImage = function(dataSource){
 	var imageWindow = Ti.UI.createWindow({
-		title: this.image,
+		title: dataSource.image,
 		backgroundColor: "#cecece"
 	});
 	var image = Ti.UI.createImageView({
-		image: this.image,
-		top: 10,
-		left: 10,
-		right: 10,
-		bottom: 10
+		image: dataSource.image,
+		height: "80%",
+		width: "80%"
 	});
 	
 	mainWin.add(image);
