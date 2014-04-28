@@ -7,17 +7,12 @@ var mainWindow = Ti.UI.createWindow({
 	align: "center"
 });
 
-var border = Ti.UI.createView({
-	height: 20,
-	top: 0,
-	backgroundColor: "#fff"
-});
 
 var titleLabel = Ti.UI.createLabel({
 	text: "Mike's Facebook Gallery",
 	top: 50,
 	font: {fontSize: 22, fontFamily: "Verdana", fontWeight: "bold"},
-	color: "black",
+	color: "white",
 	align: "center"
 });
 
@@ -49,5 +44,5 @@ var getImages = function(){
 
 beginButton.addEventListener("click", getImages);
 
-mainWindow.add(beginButton, titleImage, titleLabel, border);
+mainWindow.add(beginButton, titleImage, titleLabel);
 mainWindow.open();

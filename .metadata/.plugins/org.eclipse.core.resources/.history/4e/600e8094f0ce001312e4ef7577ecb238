@@ -3,8 +3,7 @@ var pHeight = Ti.Platform.displayCaps.platformHeight;
 var rowCount = 3;
 var margin = 10;
 var trueCanvasWidth = (pWidth - (margin * 2)) - rowCount;
-var size = 67;
-//var size = ((pHeight - trueCanvasWidth)/rowCount);
+var size = 65;
 var imagesFolder = Ti.Filesystem.getFile(Ti.Filesystem.resourcesDirectory, "proj3images");
 var imageFiles = imagesFolder.getDirectoryListing();
 
@@ -60,7 +59,7 @@ var getImage = function(){
 		backgroundColor: "#cecece"
 	});
 	var myImage = Ti.UI.createImageView({
-		image: "proj3images/" + this.imageFiles,
+		image: this.image,
 		top: 10,
 		left: 10,
 		right: 10,

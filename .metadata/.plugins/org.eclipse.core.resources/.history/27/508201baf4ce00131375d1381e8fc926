@@ -60,7 +60,7 @@ var getImage = function(){
 		backgroundColor: "#cecece"
 	});
 	var myImage = Ti.UI.createImageView({
-		image: "proj3images/" + this.imageFiles,
+		image: "proj3images/" + this.image,
 		top: 10,
 		left: 10,
 		right: 10,
