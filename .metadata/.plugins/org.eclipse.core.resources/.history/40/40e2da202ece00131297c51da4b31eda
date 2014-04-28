@@ -1,0 +1,42 @@
+Ti.UI.setBackgroundColor("white");
+
+var mainWindow = Ti.UI.createWindow({
+	title: "Mike's Gallery",
+	backgroundImage: ("iphonebg.jpg"),
+});
+
+var titleLabel = Ti.UI.createLabel({
+	text: "Mike's Facebook Gallery",
+	top: 50,
+	font: {fontSize: 22, fontFamily: "Verdana", fontWeight: "bold"},
+	color: "white",
+	align: "center"
+});
+
+var titleImage = Ti.UI.createView({
+	backgroundImage: "cover.jpg",
+	borderRadius: 8,
+	top: 100,
+	left: 40,
+	right: 40,
+	bottom: 120
+});
+
+var beginButton = Ti.UI.createLabel({
+	height: 40,
+	bottom: 30,
+	left: 30,
+	right: 30,
+	height: 50,
+	borderRadius: 10,
+	backgroundColor: "#c42332",
+	text: "Start Gallery",
+	font: {fontFamily: "Verdana", fontSize: 30, fontWeight: "bold"},
+	color: "#fff",
+	textAlign: "center"
+});
+
+beginButton.addEventListener("click", openGallery);
+
+mainWindow.add(beginButton, titleImage, titleLabel);
+mainWindow.open();

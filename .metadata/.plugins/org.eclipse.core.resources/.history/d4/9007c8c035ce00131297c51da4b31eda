@@ -1,0 +1,190 @@
+var pWidth = Ti.Platform.displayCaps.platformWidth;
+var pHeight = Ti.Platform.displayCaps.platfromHeight;
+var imagesFolder = Ti.Filesystem.getFile(Ti.Filesystem.resourcesDirectory, "proj3images");
+var imageFiles = imagesFolder.getDirectoryListing();
+var size = 70;
+
+var imageWin = Ti.UI.createWindow({
+	title: "Mike's Gallery",
+});
+
+var imageNavWin = Ti.UI.iOS.createNavigationWindow({
+	window: imageWin
+});
+
+var closeButton = Ti.UI.createLabel({
+	text: "Close Window",
+	textAlign: "center",
+	backgroundColor : "#cecece",
+	color: "white",
+	height: 40,
+	width: "100%",
+	bottom: 0,
+	font: {fontSize: 14, fontFamily: "Verdana"}
+});
+
+var closeWindow = function(){
+	var openFile = require("app");
+	imageNavWin.close();
+};
+
+closeButton.addEventListener("click", closeWindow);
+imageNavWin.add(closeButton);
+
+var border = Ti.UI.createView({
+	height: 1, 
+	width: pWidth,
+	top: 20
+});
+
+
+var getImage = function(dataSource){
+	var imageWindow = Ti.UI.createWindow({
+		title: dataSource.image,
+		font: {fontFamily: "Verdana", fontSize: 12},
+		backgroundColor: "white"
+	});
+
+var viewContainer = Ti.UI.createScrollView({
+	top: 0,
+	layout: "horizontal",
+	width: pWidth,
+	height: pHeight-border.height-border.top,
+	contentWidth: pWidth,
+	showVerticalScrollIndicator: true,
+	backgroundColor: "#cecece"
+});
+
+imageWin.add(border,viewContainer);
+
+var getImage = function(){
+	var imageWindow = Ti.UI.createImageView({
+		backgroundColor: "#cecece",
+		image: "proj3images/" + imageFiles[i],
+	});
+
+	imageWindow.open();
+
+};
+	
+	var imageView = Ti.UI.createImageView({
+		image: dataSource.image,
+		top: 20,
+		left: 20,
+		right: 20,
+		bottom: 20,
+	});
+	imageWindow.add(imageView);
+	imageNavWin.openWindow(imageWindow);
+};
+
+for(var i=0; i=imageFiles.length; i++){
+	var view = Ti.UI.createView({
+		top: 0,
+		left: 10,
+		width: size,
+		height: size,
+	});
+	
+	var picView = Ti.UI.createImageView({
+		image: "proj3images/" + imageFiles[i],
+		top: 0,
+		width: view.width,
+		hasDetail: true
+	});
+	
+	view.add(picView);
+	picView.addEventListener("click", function(event){
+		getImage(event.source);
+	});
+	
+};
+
+
+imageNavWin.add(imageWin);
+imageNavWin.open();
+
+/*
+var openGallery = function(){
+	var pWidth = Ti.Platform.displayCaps.platformWidth;
+	var pHeight = Ti.Platform.displayCaps.platformHeight;
+	var rowCount = 3;
+	var margin = 10;
+	var trueCanvasWidth = (pWidth - (margin * 2)) - rowCount;
+	var size = ((pHeight - trueCanvasWidth)/rowCount);
+	var imagesFolder = Ti.Filesystem.getFile(Ti.Filesystem.resourcesDirectory, "proj3images");
+	var imageFiles = imagesFolder.getDirectoryListing();
+
+	var mainWin = Ti.UI.createWindow({
+		layout: "horizontal",
+		title: "Image Gallery",
+	});
+
+	var border = Ti.UI.createView({
+		backgroundColor: "#cecece",
+		height: 20,
+		top: 0
+	});
+
+	var viewContainer = Ti.UI.createScrollView({
+		top: 20,
+		layout: "horizontal",
+		width: pWidth,
+		height: pHeight-border.height-border.top,
+		contentWidth: pWidth,
+		showVerticalScrollIndicator: true,
+		backgroundColor: "#cecece"
+	});
+
+};
+
+beginButton.addEventListener("click", openGallery);
+
+galleryWindow.add(closeButton)
+galleryWindow.open();
+galleryNav.open(galleryWindow);
+
+/*
+var getImage = function(){
+	var imageWindow = Ti.UI.createImageView({
+		backgroundColor: "#cecece",
+		image: this.imageFiles
+	});
+
+	imageWindow.open();
+
+};
+
+for(var i=0; i<imageFiles.length; i++){
+	var view = Ti.UI.createView({
+		backgroundColor: "#cecece",
+		top: 10,
+		left: 10,
+		width: size,
+		height: size
+	});
+	var thumb = Ti.UI.createImageView({
+		image: "proj3images/" + imageFiles[i],
+		width: view.width*2
+	});
+
+	view.add(thumb);
+	viewContainer.add(view);
+	thumb.addEventListener("click", getImage); 
+}
+var closeButton = Ti.UI.createLabel({
+	text: "Close Window",
+	backgroundColor : "#fff",
+	color: "white",
+	height: 40,
+	width: "100%",
+	bottom: 0,
+	font: {fontSize: 14, fontFamily: "Verdana"}
+});
+
+mainWin.add(viewContainer,closeButton);
+mainWin.open();
+
+};
+*/
+

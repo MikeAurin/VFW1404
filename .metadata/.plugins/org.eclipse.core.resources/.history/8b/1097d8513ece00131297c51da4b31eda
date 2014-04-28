@@ -1,0 +1,52 @@
+Ti.UI.setBackgroundColor("#cecece");
+
+var mainWindow = Ti.UI.createWindow({
+	backgroundImage: ("iphonebg.jpg"),
+	top: 20
+});
+
+var mainNav = Ti.UI.iOS.createNavigationView({
+	window: mainWindow
+});
+
+var titleLabel = Ti.UI.createLabel({
+	text: "Mike's Facebook Gallery",
+	top: 50,
+	font: {fontSize: 22, fontFamily: "Verdana", fontWeight: "bold"},
+	color: "white",
+	align: "center"
+});
+
+var titleImage = Ti.UI.createView({
+	backgroundImage: "cover.jpg",
+	borderRadius: 8,
+	top: 100,
+	left: 40,
+	right: 40,
+	bottom: 120
+});
+
+var beginButton = Ti.UI.createLabel({
+	height: 50,
+	bottom: 35,
+	left: 30,
+	right: 30,
+	borderRadius: 10,
+	backgroundColor: "#c42332",
+	text: "Start Gallery",
+	font: {fontFamily: "Verdana", fontSize: 30, fontWeight: "bold"},
+	color: "#fff",
+	textAlign: "center"
+});
+
+var getImages = function(){
+	var openFile = require('gallery');
+};
+
+beginButton.addEventListener("click", getImages);
+
+mainWindow.add(beginButton, titleImage, titleLabel);
+mainWindow.open();
+mainNav.add(mainWindow);
+mainNav.open();
+
