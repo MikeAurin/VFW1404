@@ -20,7 +20,7 @@ var navWindow = Ti.UI.iOS.createNavigationWindow({
 
 var border = Ti.UI.createView({
 	backgroundColor: "#cecece",
-	height: 0,
+	height: 20,
 	top: 0
 });
 
@@ -37,22 +37,16 @@ var viewContainer = Ti.UI.createScrollView({
 mainWin.add(border, viewContainer);
 
 var backButton = Ti.UI.createLabel({
-	bottom: 0,
+	top: 0,
 	height: 50,
 	width: "100%",
-	backgroundColor: "black",
+	backgroundColor: "grey",
 	text: "Close Gallery",
 	color: "white",
 	textAlign: "center"
 });
 
-var closeGallery = function(){
-	var startOver = require("app");
-	navWindow.close();
-};
-
-backButton.addEventListener("click", closeGallery);
-navWindow.add(backButton);
+mainWin.add(backButton);
 
 var getImage = function(){
 	var imageWindow = Ti.UI.createImageView({

@@ -1,6 +1,7 @@
 Ti.UI.setBackgroundColor("#cecece");
 
-var mainWindow = Ti.UI.createWindow({	
+var mainWindow = Ti.UI.createWindow({
+	backgroundImage: ("iphonebg.jpg"),	
 	text: "Mike's Facebook Gallery",
 	font: {fontSize: 22, fontFamily: "Verdana", fontWeight: "bold"},
 	color: "black",

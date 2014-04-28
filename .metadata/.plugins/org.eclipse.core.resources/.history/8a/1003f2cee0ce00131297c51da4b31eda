@@ -20,7 +20,7 @@ var navWindow = Ti.UI.iOS.createNavigationWindow({
 
 var border = Ti.UI.createView({
 	backgroundColor: "#cecece",
-	height: 0,
+	height: 20,
 	top: 0
 });
 
@@ -55,7 +55,7 @@ backButton.addEventListener("click", closeGallery);
 navWindow.add(backButton);
 
 var getImage = function(){
-	var imageWindow = Ti.UI.createImageView({
+	var o = Ti.UI.createImageView({
 		backgroundColor: "#cecece",
 		image: this.image
 	});
