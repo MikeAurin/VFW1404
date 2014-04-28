@@ -53,6 +53,8 @@ var viewContainer = Ti.UI.createScrollView({
 
 mainWin.add(border, viewContainer);
 
+
+
 var getImage = function(){
 	var imageWindow = Ti.UI.createWindow({
 		title: this.image,

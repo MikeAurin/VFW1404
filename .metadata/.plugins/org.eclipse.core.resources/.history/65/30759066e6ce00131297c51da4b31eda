@@ -23,6 +23,19 @@ var border = Ti.UI.createView({
 	height: 0,
 	top: 0
 });
+
+var viewContainer = Ti.UI.createScrollView({
+	top: 0,
+	layout: "horizontal",
+	width: pWidth,
+	height: pHeight-border.height-border.top-backButton.height-40,
+	contentWidth: pWidth,
+	showVerticalScrollIndicator: true,
+	backgroundColor: "#cecece"
+});
+
+mainWin.add(border, viewContainer);
+
 var backButton = Ti.UI.createLabel({
 	bottom: 0,
 	height: 50,
@@ -40,18 +53,6 @@ var closeGallery = function(){
 
 backButton.addEventListener("click", closeGallery);
 navWindow.add(backButton);
-
-var viewContainer = Ti.UI.createScrollView({
-	top: 0,
-	layout: "horizontal",
-	width: pWidth,
-	height: pHeight-border.height-border.top-backButton.height-60,
-	contentWidth: pWidth,
-	showVerticalScrollIndicator: true,
-	backgroundColor: "#cecece"
-});
-
-mainWin.add(border, viewContainer);
 
 var getImage = function(){
 	var imageWindow = Ti.UI.createWindow({

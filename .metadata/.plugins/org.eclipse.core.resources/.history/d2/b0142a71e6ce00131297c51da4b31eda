@@ -45,13 +45,15 @@ var viewContainer = Ti.UI.createScrollView({
 	top: 0,
 	layout: "horizontal",
 	width: pWidth,
-	height: pHeight-border.height-border.top-backButton.height-60,
+	height: pHeight-border.height-border.top-backButton.height-40,
 	contentWidth: pWidth,
 	showVerticalScrollIndicator: true,
 	backgroundColor: "#cecece"
 });
 
 mainWin.add(border, viewContainer);
+
+
 
 var getImage = function(){
 	var imageWindow = Ti.UI.createWindow({
