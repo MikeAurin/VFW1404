@@ -1,12 +1,13 @@
 var pWidth = Ti.Platform.displayCaps.platformWidth;
 var pHeight = Ti.Platform.displayCaps.platformHeight;
+//var rowCount = 4;
 var margin = 10;
 var trueCanvasWidth = (pWidth - (margin * 2));
 var size = 67;
 var imagesFolder = Ti.Filesystem.getFile(Ti.Filesystem.resourcesDirectory, "proj3images");
 var imageFiles = imagesFolder.getDirectoryListing();
 
-console.log(imageFiles); 
+console.log(imageFiles);
 
 var mainWin = Ti.UI.createWindow({
 	layout: "horizontal",
@@ -29,7 +30,6 @@ var backButton = Ti.UI.createLabel({
 	width: "100%",
 	backgroundColor: "black",
 	text: "Close Gallery",
-	font: {fontFamily: "Verdana", fontSize: 16},
 	color: "white",
 	textAlign: "center"
 });
@@ -68,7 +68,7 @@ var getImage = function(){
 		bottom: 0
 });
 	
-	mainWin.add(imageWindow);
+	mainWin.add(imageWindow, myImage);
 	imageWindow.add(myImage);
 	navWindow.openWindow(imageWindow);	
 

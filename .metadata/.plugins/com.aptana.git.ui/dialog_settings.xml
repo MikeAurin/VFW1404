@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="com.aptana.git.ui.internal.actions.CommitDialog">
-		<item value="889" key="DIALOG_WIDTH"/>
+		<item value="1123" key="DIALOG_WIDTH"/>
 		<item value="3" key="DIALOG_Y_ORIGIN"/>
-		<item value="602" key="DIALOG_HEIGHT"/>
-		<item value="-148" key="DIALOG_X_ORIGIN"/>
+		<item value="401" key="DIALOG_X_ORIGIN"/>
+		<item value="825" key="DIALOG_HEIGHT"/>
 		<item value="1|Lucida Grande|11.0|0|COCOA|1|LucidaGrande" key="DIALOG_FONT_NAME"/>
 	</section>
 </section>

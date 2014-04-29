@@ -6,7 +6,7 @@ var size = 67;
 var imagesFolder = Ti.Filesystem.getFile(Ti.Filesystem.resourcesDirectory, "proj3images");
 var imageFiles = imagesFolder.getDirectoryListing();
 
-console.log(imageFiles); 
+//console.log(imageFiles); 
 
 var mainWin = Ti.UI.createWindow({
 	layout: "horizontal",
