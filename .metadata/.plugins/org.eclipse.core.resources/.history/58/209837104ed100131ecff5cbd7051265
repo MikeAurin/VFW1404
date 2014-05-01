@@ -1,0 +1,17 @@
+Titanium.UI.setBackgroundColor("white");
+
+mainWin = Ti.UI.createWindow({
+	backgroundColor: "white"
+});
+
+
+mainImage = Ti.UI.createLabel({
+	backgroundImage: "universal.jpg",
+	width: "100%",
+	height: 200,
+	bottom: 0
+});
+
+mainWin.add(mainImage);
+mainWin.open();
+

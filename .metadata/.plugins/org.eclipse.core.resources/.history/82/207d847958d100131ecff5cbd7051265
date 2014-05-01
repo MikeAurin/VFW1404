@@ -1,0 +1,47 @@
+Titanium.UI.setBackgroundColor("white");
+
+mainWin = Ti.UI.createWindow({
+	backgroundColor: "white",
+});
+
+title = Ti.UI.createLabel({
+	text: "Universal Studios Resort",
+	font: {fontFamily: "Futura", fontSize: 40, fontWeight:"medium"},
+	width: "100%",
+	textAlign: "center",
+	height: 40,
+	top: 40
+});
+
+description = Ti.UI.createLabel({
+	text: "A comprehensive guide to the parks",
+	font: {fontFamily: "Futura", fontSize: 20, fontWeight:"medium"},
+	top: title.height + 45
+});
+
+mainImage = Ti.UI.createLabel({
+	backgroundImage: "universal.jpg",
+	width: "100%",
+	height: 200,
+	bottom: 175
+});
+
+begin = Ti.UI.createLabel({
+	width: "100%",
+	bottom: 0,
+	height: 75,
+	text: "Enter",
+	font: {fontFamily:"Futura", fontSize: 50, fontWeight: "medium"},
+	textAlign: "center",
+	backgroundColor: "#0465b2"
+});
+
+var openNav = function(){
+	var beginApp = require("content");
+};
+
+begin.addEventListener("click", openNav);
+
+mainWin.add(mainImage, title, description, begin);
+mainWin.open();
+

@@ -1,0 +1,31 @@
+Titanium.UI.setBackgroundColor("white");
+
+mainWin = Ti.UI.createWindow({
+	backgroundColor: "white",
+});
+
+title = Ti.UI.createLabel({
+	text: "Universal Studios Resort",
+	font: {fontFamily: "Futura", fontSize: 40, fontWeight:"medium"},
+	width: "100%",
+	textAlign: "center",
+	height: 40,
+	top: 40
+});
+
+description = Ti.UI.createLabel({
+	text: "A comprehensive guide to the parks",
+	font: {fontFamily: "Futura", fontSize: 20, fontWeight:"medium"},
+	top: title.height + 45
+});
+
+mainImage = Ti.UI.createLabel({
+	backgroundImage: "universal.jpg",
+	width: "100%",
+	height: 200,
+	bottom: 100
+});
+
+mainWin.add(mainImage, title, description);
+mainWin.open();
+
