@@ -99,7 +99,7 @@ var universal = [
 var islands = [
 	{title: "The Amazing Spiderman", description: "Calling all true believers...Spiderman needs your help to stop Dr. Octopus and his Sinsiter Syndicate from stealing the Statue of Liberty.  Hop in the Daily Bugle's Scoop vehicle and help your friendly neighborhood Spiderman before it's too late."},
  	{title: "The Incredible Hulk", description: "Enter Bruce Banner's lab and climb aboard his Gamma Ray Accelerator as you go from 0-60 in 3 seconds flat!"},
- 	{title: "Rip Saw Falls", description: "Calling all Mounties!  Dudley Do-Right needs your help to rescue Nell from the dastardly Snidely Whiplash.  Follow along Dudley and Horse in this side splitting adventure that jumps right out of the pages from the Sunday Funnys."},
+ 	{title: "Ripsaw Falls", description: "Calling all Mounties!  Dudley Do-Right needs your help to rescue Nell from the dastardly Snidely Whiplash.  Follow along Dudley and Horse in this side splitting adventure that jumps right out of the pages from the Sunday Funnys."},
  	{title: "Dueling Dragons", description: "Choose your destiny: Fire or Ice as the dragon of your choice duels to the death high above the earth in a roller coaster battle that will take you within inches of your opponent."},
  	{title: "Jurassic Park Adventure", description: "Take a relaxing ride through the river at Jurassic Park and become immersed in the prehistoric scenery and wildlife on this guided tour.  Don't worry.  The raptors are safely locked away in containment."}, 
  	{title: "Poseidon's Fury", description: "Journey deep into the Temple of Poseidon in search of the Golden Trident.  Your scheduled tour guide appears to have called in sick, although I'm sure your replacement, Taylor will be a suitable replacement."}, 
