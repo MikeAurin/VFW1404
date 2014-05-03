@@ -1,5 +1,6 @@
 galleryWindow = Ti.UI.createWindow({
-	backgroundColor: "white"
+	backgroundColor: "#0465b2",
+	title: "Cant decide what to do next?"
 });
 
 navWin = Ti.UI.iOS.createNavigationWindow({
@@ -34,16 +35,39 @@ var imageArray =
 var imgs = Ti.UI.createImageView({
 		image: "",
 		width: "100%",
-		top: 50,
-		height: 200,
+		top: 100,
+		zIndex: 0
 		});
 
 changeButton = Ti.UI.createButton({
+	backgroundColor: "white",
 	bottom: 0,
-	width: "100%",
-	title: "Choose My Next Ride",
-	height: 50
+	width: "200%",
+	title: "Choose My Next Ride!",
+	height: 50,
+	color: "black",
+	zIndex: 1,
+	
 });
+
+var backButton = Ti.UI.createLabel({
+	top: 0,
+	height: 50,
+	left: 5,
+	text: "< Home",
+	font: {fontFamily: "Futura", fontSize: 24},
+	color: "white",
+	textAlign: "center"
+});
+
+var closeGallery = function(){
+	var goHome = require("app");
+	mainWin.open();
+	navWin.close();
+};
+
+backButton.addEventListener("click", closeGallery);
+
 
 var randomPictures = function(min, max){
 	return Math.floor(Math.random() * (max - min + 1) + min);
@@ -55,6 +79,6 @@ changeButton.addEventListener('click', function (e) {
     
     
 
-galleryWindow.add(changeButton, imgs);
+galleryWindow.add(changeButton, imgs, backButton);
 navWin.add(mainWin);
 navWin.open();

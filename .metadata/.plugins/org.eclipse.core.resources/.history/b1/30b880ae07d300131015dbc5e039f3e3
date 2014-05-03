@@ -1,0 +1,62 @@
+var chooseScreen = Ti.UI.createWindow({
+	backgroundColor:"#cecece"
+});
+
+tableButton = Ti.UI.createButton({
+	top: 90,
+	left: 20,
+	right: 20,
+	height: 100,
+	borderRadius: 5,
+	textAlign: "center",
+	color: "#black",
+	backgroundColor: "#0465b2",
+	title: "Rides and Attractions",
+});
+
+tableButton.addEventListener('click', function(e){
+
+var newWin=Ti.UI.createWindow({url:'table.js'});
+ newWin.open();
+ 
+});
+
+
+galleryButton = Ti.UI.createButton({
+	bottom: 215,
+	left: 20,
+	right: 20,
+	height: 100,
+	borderRadius: 5,
+	textAlign: "center",
+	color: "#black",
+	backgroundColor: "#e1a60a",
+	title: "Theme Park Gallery",
+});
+
+var openGallery = function(){
+	var galleryFunction = require("gallery");
+};
+
+galleryButton.addEventListener("click", openGallery);
+
+settingsButton = Ti.UI.createButton({
+	bottom: 50,
+	left: 20,
+	right: 20,
+	height: 100,
+	borderRadius: 5,
+	textAlign: "center",
+	color: "#black",
+	backgroundColor: "#d40b1e",
+	title: "Settings",
+});
+
+var openSettings = function(){
+	var settingsFunction = require("switchpage");
+};
+
+settingsButton.addEventListener("click", openSettings);
+
+chooseScreen.add(tableButton, galleryButton, settingsButton);
+chooseScreen.open();

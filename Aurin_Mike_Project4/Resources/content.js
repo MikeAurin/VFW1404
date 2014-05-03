@@ -15,10 +15,14 @@ tableButton = Ti.UI.createButton({
 });
 
 var openTable = function(){
-	var tableFunction = require("table");
+	var tableWindow = Ti.UI.createWindow({
+		backgroundColor: "white",
+		url: "table.js"
+	});
+	tableWindow.open();
 };
 
-tableButton.addEventListener ("click", openTable);
+tableButton.addEventListener("click", openTable);
 
 galleryButton = Ti.UI.createButton({
 	bottom: 215,

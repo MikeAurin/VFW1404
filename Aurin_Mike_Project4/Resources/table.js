@@ -1,5 +1,7 @@
+currentWindow = Ti.UI.currentWindow;
+
 var navWindow = Ti.UI.iOS.createNavigationWindow({
-	window: mainWin
+	window: currentWindow
 });
 
 var titleView = Ti.UI.createLabel({
@@ -108,7 +110,7 @@ var getDetail = function(){
 
 
 titleView.add(titleLabel);
-mainWin.add(titleView, border, parks);
+currentWindow.add(titleView, border, parks);
 navWindow.add(backButton);
 navWindow.open(); 
 
