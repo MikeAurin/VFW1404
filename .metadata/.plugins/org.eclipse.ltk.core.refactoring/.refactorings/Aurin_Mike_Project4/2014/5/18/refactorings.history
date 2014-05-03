@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;Aurin_Mike_Project4/Resources/switch.js&apos; to &apos;switchpage&apos;" description="Rename resource &apos;switch.js&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Resources/switch.js" name="switchpage" stamp="1399063143986" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;Aurin_Mike_Project4/Resources/switchpage&apos; to &apos;switchpage.js&apos;" description="Rename resource &apos;switchpage&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Resources/switchpage" name="switchpage.js" stamp="1399063224253" updateReferences="true"/>
+</session>

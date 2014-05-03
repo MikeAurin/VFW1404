@@ -26,11 +26,12 @@ mainImage = Ti.UI.createLabel({
 	bottom: 175
 });
 
-begin = Ti.UI.createLabel({
+begin = Ti.UI.createButton({
 	width: "100%",
 	bottom: 0,
 	height: 75,
-	text: "Enter",
+	title: "Enter",
+	color: "black",
 	font: {fontFamily:"Futura", fontSize: 50, fontWeight: "medium"},
 	textAlign: "center",
 	backgroundColor: "#0465b2"

@@ -1,96 +1,60 @@
-var pWidth = Ti.Platform.displayCaps.platformWidth;
-var pHeight = Ti.Platform.displayCaps.platformHeight;
-var margin = 10;
-var trueCanvasWidth = (pWidth - (margin * 2));
-var size = 67;
-var imagesFolder = Ti.Filesystem.getFile(Ti.Filesystem.resourcesDirectory, "gallery");
-var imageFiles = imagesFolder.getDirectoryListing();
-
-console.log(imageFiles); 
-
-var mainWin = Ti.UI.createWindow({
-	layout: "horizontal",
-	title: "Image Gallery",
+galleryWindow = Ti.UI.createWindow({
+	backgroundColor: "white"
 });
 
-var navWindow = Ti.UI.iOS.createNavigationWindow({
-	window: mainWin
+navWin = Ti.UI.iOS.createNavigationWindow({
+	window: galleryWindow
 });
 
-var border = Ti.UI.createView({
-	backgroundColor: "#cecece",
-	height: 0,
-	top: 0
-});
+var imageArray = 
+	["gallery/et.jpg",
+	"gallery/etride.jpg",
+	"gallery/fury.jpg",
+	"gallery/hulk.jpg",
+	"gallery/hulk2.jpg",
+	"gallery/jpart.gif",
+	"gallery/jppromo.gif",
+	"gallery/mib.jpg",
+	"gallery/mib2.jpg",
+	"gallery/mummyride.jpg",
+	"gallery/poseidon.jpg",
+	"gallery/ripride.jpg",
+	"gallery/ripridepromo.jpg",
+	"gallery/ripsaw.jpg",
+	"gallery/ripsaw2.jpg",
+	"gallery/shrek4d.jpg",
+	"gallery/shrekpromo.jpg",
+	"gallery/spidey.jpg",
+	"gallery/spideypromo.jpg",
+	"gallery/themummypromo.jpg",
+	"gallery/twister.jpg",
+	"gallery/twisterpromo.jpg",
+	];
 
-var backButton = Ti.UI.createLabel({
+var imgs = Ti.UI.createImageView({
+		image: "",
+		width: "100%",
+		top: 50,
+		height: 200,
+		});
+
+changeButton = Ti.UI.createButton({
 	bottom: 0,
-	height: 50,
 	width: "100%",
-	backgroundColor: "black",
-	text: "Close Gallery",
-	font: {fontFamily: "Verdana", fontSize: 16},
-	color: "white",
-	textAlign: "center"
+	title: "Choose My Next Ride",
+	height: 50
 });
 
-var closeGallery = function(){
-	var startOver = require("app");
-	mainWin.open();
-	navWindow.close();
-};
+var randomPictures = function(min, max){
+	return Math.floor(Math.random() * (max - min + 1) + min);
+	};
 
-backButton.addEventListener("click", closeGallery);
-navWindow.add(backButton);
+changeButton.addEventListener('click', function (e) {
+    imgs.image = (imageArray[randomPictures(1, imageArray.length) - 1]);
+    });
+    
+    
 
-var viewContainer = Ti.UI.createScrollView({
-	top: 0,
-	layout: "horizontal",
-	width: pWidth,
-	height: pHeight-border.height-border.top-backButton.height-60,
-	contentWidth: pWidth,
-	showVerticalScrollIndicator: true,
-	backgroundColor: "#cecece"
-});
-
-mainWin.add(border, viewContainer);
-
-var getImage = function(){
-	var imageWindow = Ti.UI.createWindow({
-		title: this.image,
-		backgroundColor: "#cecece"
-	});
-	var myImage = Ti.UI.createImageView({
-		image: this.image,
-		top: 0,
-		left: 0, 
-		right: 0,
-		bottom: 0
-});
-	
-	mainWin.add(imageWindow);
-	imageWindow.add(myImage);
-	navWindow.openWindow(imageWindow);	
-
-};
-
-for(var i=0; i<imageFiles.length; i++){
-	var view = Ti.UI.createView({
-		backgroundColor: "#cecece",
-		top: 10,
-		left: 10,
-		width: size,
-		height: size
-	});
-	var thumb = Ti.UI.createImageView({
-		image: "gallery/" + imageFiles[i],
-		width: view.width*2
-	});
-
-	view.add(thumb);
-	viewContainer.add(view);
-	thumb.addEventListener("click", getImage); 
-}
-
-navWindow.add(mainWin);
-navWindow.open();
+galleryWindow.add(changeButton, imgs);
+navWin.add(mainWin);
+navWin.open();

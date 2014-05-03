@@ -1,0 +1,6 @@
+var familySwitch = Ti.UI.createSwitch({
+	value: true
+});
+
+mainWin.add(familySwitch);
+
