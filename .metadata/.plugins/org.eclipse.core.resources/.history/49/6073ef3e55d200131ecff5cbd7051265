@@ -1,0 +1,17 @@
+var switchWindow = Ti.UI.createWindow({
+	backgroundColor: "#0465b2"
+});
+
+var navWin = Ti.UI.iOS.createNavigationWindow({
+	window: mainWin
+});
+
+var familySwitch = Ti.UI.createSwitch({
+	value: true,
+	top: 30,
+	right: 30
+});
+
+mainWin.add(familySwitch);
+mainWin.open();
+navWin.open();
