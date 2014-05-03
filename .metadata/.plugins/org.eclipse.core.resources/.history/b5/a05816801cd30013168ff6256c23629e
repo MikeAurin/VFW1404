@@ -52,7 +52,8 @@ var backButton = Ti.UI.createLabel({
 });
 
 var closeSwitch = function(){
-	switchWindow.close();
+	var goHome = require("app");
+	mainWin.open();
 };
 
 backButton.addEventListener("click", closeSwitch);

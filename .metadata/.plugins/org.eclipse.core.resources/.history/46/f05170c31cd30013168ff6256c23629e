@@ -65,7 +65,7 @@ var backButton = Ti.UI.createButton({
 
 var closeGallery = function(){
 	var goHome = require("app");
-	mainWin.open();
+	currentWindow.close();
 };
 
 backButton.addEventListener("click", closeGallery);

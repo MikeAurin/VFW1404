@@ -45,17 +45,9 @@ var backButton = Ti.UI.createLabel({
 	width: "100%",
 	text: "Home",
 	backgroundColor: "white",
-	font: {fontFamily: "Futura", fontSize: 30},
-	textAlign: "center",
 	color: "#0465b2",
 	bottom: 0
 });
-
-var closeSwitch = function(){
-	switchWindow.close();
-};
-
-backButton.addEventListener("click", closeSwitch);
 
 switchWindow.add(basicSwitch, label, switchTitle, rideList, backButton);
 switchWindow.open();

@@ -9,6 +9,7 @@ var titleView = Ti.UI.createLabel({
 	backgroundColor: "#cecece",
 	top: 0
 });
+
 var border = Ti.UI.createView({
 	backgroundColor: "#dbdbdb",
 	height: 1,
@@ -29,7 +30,7 @@ var backButton = Ti.UI.createLabel({
 	width: "100%",
 	backgroundColor: "black",
 	text: "Home",
-	font: {fontFamily: "Verdana", fontSize: 16},
+	font: {fontFamily: "Futura", fontSize: 16},
 	color: "white",
 	textAlign: "center"
 });

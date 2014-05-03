@@ -71,18 +71,18 @@ var closeGallery = function(){
 backButton.addEventListener("click", closeGallery);
 
 
-var lastNumber;
-var randomize = function(min, max){
-	var nextNumber = Math.floor(Math.random() * (max - min + 1) + min);
-		while (lastNumber === noRepeat){
-			var noRepeat = Math.floor(Math.random() * (max - min + 1) + min);
-		}
-	lastNumber = nextNumber;
-	return nextNumber;
-};
+var prevNumberWas;
+var randomPictures = function(min, max){
+	var noRepeat = Math.floor(Math.random() * (max - min + 1) + min);
+	while (prevNumberWas === noRepeat){
+		var noRepeat = Math.floor(Math.random() * (max - min + 1) + min);
+	}
+	prevNumberWas = noRepeat;
+	return noRepeat;
+	};
 
 changeButton.addEventListener('click', function (e) {
-    imgs.image = (imageArray[randomize(1, imageArray.length) - 1]);
+    imgs.image = (imageArray[randomPictures(1, imageArray.length) - 1]);
     });
     
     

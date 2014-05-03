@@ -51,12 +51,6 @@ var backButton = Ti.UI.createLabel({
 	bottom: 0
 });
 
-var closeSwitch = function(){
-	switchWindow.close();
-};
-
-backButton.addEventListener("click", closeSwitch);
-
 switchWindow.add(basicSwitch, label, switchTitle, rideList, backButton);
 switchWindow.open();
 

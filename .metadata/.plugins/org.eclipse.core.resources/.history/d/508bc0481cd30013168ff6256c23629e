@@ -74,9 +74,9 @@ backButton.addEventListener("click", closeGallery);
 var lastNumber;
 var randomize = function(min, max){
 	var nextNumber = Math.floor(Math.random() * (max - min + 1) + min);
-		while (lastNumber === noRepeat){
-			var noRepeat = Math.floor(Math.random() * (max - min + 1) + min);
-		}
+	while (lastNumber === noRepeat){
+		var noRepeat = Math.floor(Math.random() * (max - min + 1) + min);
+	}
 	lastNumber = nextNumber;
 	return nextNumber;
 };

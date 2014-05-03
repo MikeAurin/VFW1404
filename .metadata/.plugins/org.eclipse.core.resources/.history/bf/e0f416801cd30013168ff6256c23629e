@@ -9,6 +9,7 @@ var titleView = Ti.UI.createLabel({
 	backgroundColor: "#cecece",
 	top: 0
 });
+
 var border = Ti.UI.createView({
 	backgroundColor: "#dbdbdb",
 	height: 1,
