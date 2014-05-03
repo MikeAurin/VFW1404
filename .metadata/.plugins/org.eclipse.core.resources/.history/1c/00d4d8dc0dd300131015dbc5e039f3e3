@@ -1,0 +1,91 @@
+var currentWindow = Ti.UI.currentWindow;
+
+var galleryTitle = Ti.UI.createLabel({
+	color: "#0465b2",
+	font: {fontFamily: "Futura", fontSize: 26},
+	text: "Cant decide what to do next?",
+	top: 20
+});
+
+
+var imageArray = 
+	["gallery/et.jpg",
+	"gallery/etride.jpg",
+	"gallery/fury.jpg",
+	"gallery/hulk.jpg",
+	"gallery/hulk2.jpg",
+	"gallery/jpart.gif",
+	"gallery/jppromo.gif",
+	"gallery/mib.jpg",
+	"gallery/mib2.jpg",
+	"gallery/mummyride.jpg",
+	"gallery/poseidon.jpg",
+	"gallery/ripride.jpg",
+	"gallery/ripridepromo.jpg",
+	"gallery/ripsaw.jpg",
+	"gallery/ripsaw2.jpg",
+	"gallery/shrek4d.jpg",
+	"gallery/shrekpromo.jpg",
+	"gallery/spidey.jpg",
+	"gallery/spideypromo.jpg",
+	"gallery/themummypromo.jpg",
+	"gallery/twister.jpg",
+	"gallery/twisterpromo.jpg",
+	];
+
+var imgs = Ti.UI.createImageView({
+		image: "",
+		width: "100%",
+		top: 120,
+		zIndex: 0
+		});
+
+changeButton = Ti.UI.createButton({
+	backgroundColor: "#0465b2",
+	bottom: 0,
+	width: "200%",
+	title: "Choose My Next Ride!",
+	height: 50,
+	color: "black",
+	zIndex: 1,
+	
+});
+
+var backButton = Ti.UI.createButton({
+	height: 50,
+	top: 70,
+	title: "Back to Main Menu",
+	width: "100%",
+	font: {fontFamily: "Futura", fontSize: 36},
+	color: "black",
+	backgroundColor: "#e1a60a",
+	textAlign: "center",
+	zIndex: 2
+});
+
+var closeGallery = function(){
+	var goHome = require("app");
+	mainWin.open();
+};
+
+backButton.addEventListener("click", closeGallery);
+
+
+var prevNumberWas;
+var randomPictures = function(min, max){
+	var noRepeat = Math.floor(Math.random() * (max - min + 1) + min);
+	while (prevNumberWas === noRepeat){
+		var noRepeat = Math.floor(Math.random() * (max - min + 1) + min);
+	}
+	prevNumberWas = noRepeat;
+	return noRepeat;
+	};
+
+changeButton.addEventListener('click', function (e) {
+    imgs.image = (imageArray[randomPictures(1, imageArray.length) - 1]);
+    });
+    
+    
+
+currentWindow.add(changeButton, imgs, backButton, galleryTitle);
+currentWindow.open();

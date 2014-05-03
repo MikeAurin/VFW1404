@@ -1,0 +1,42 @@
+var switchWindow = Ti.UI.createWindow({
+	backgroundColor: "#0465b2"
+});
+
+var label = Ti.UI.createLabel({
+	text: "Family Friendly Rides",
+	top: 50,
+	color: "white",
+	font: {fontFamily: "Futura", fontSize: 26},
+	left: 20
+});
+
+var familySwitch = Ti.UI.createSwitch({
+	value: true,
+	top: 50,
+	title: "Family Friendly Rides",
+	right: 30
+});
+
+familySwitch.addEventListener("change", function(e){
+	if(familySwitch.value === true){
+		var family = Ti.UI.createLabel({
+			backgroundColor: "blue",
+			width: "%100"
+		});
+		switchWindow.add(family);
+		switchWindow.open();
+	}else{
+		var teen = Ti.UI.createLabel({
+			backgroundColor: "red",
+			width: "%100"
+		});
+		switchWindow.add(teen);
+		switchWindow.open();
+	}
+});
+
+switchWindow.add(familySwitch, label);
+switchWindow.open();
+
+
+

@@ -37,9 +37,12 @@ galleryButton = Ti.UI.createButton({
 });
 
 var openGallery = function(){
-	var galleryFunction = require("gallery");
+	var galleryWindow = Ti.UI.createWindow({
+		backgroundColor: "white",
+		url: "gallery.js"
+	});
+	galleryWindow.open();
 };
-
 galleryButton.addEventListener("click", openGallery);
 
 settingsButton = Ti.UI.createButton({

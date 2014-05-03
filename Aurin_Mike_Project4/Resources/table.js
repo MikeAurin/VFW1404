@@ -1,4 +1,4 @@
-currentWindow = Ti.UI.currentWindow;
+var currentWindow = Ti.UI.currentWindow;
 
 var navWindow = Ti.UI.iOS.createNavigationWindow({
 	window: currentWindow

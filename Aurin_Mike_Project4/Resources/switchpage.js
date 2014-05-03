@@ -2,18 +2,47 @@ var switchWindow = Ti.UI.createWindow({
 	backgroundColor: "#0465b2"
 });
 
+switchTitle = Ti.UI.createLabel({
+	text: "Are you traveling with little ones today?",
+	top: 30,
+	color: "white"
+});
+
 var label = Ti.UI.createLabel({
 	text: "Family Friendly Rides",
-	top: 50,
-	left: 10
+	top: 60,
+	color: "white",
+	font: {fontFamily: "Futura", fontSize: 26},
+	left: 20
 });
 
-var familySwitch = Ti.UI.createSwitch({
+var rideList = Ti.UI.createLabel({
+	top: 150,
+	width: Ti.UI.SIZE,
+	height: Ti.UI.SIZE,
+	text: "",
+	color: "white",
+	font: {fontFamily: "Futura", fontSize: 48},
+});
+
+var basicSwitch = Ti.UI.createSwitch({
 	value: true,
-	top: 50,
-	right: 30
+	top: 60,
+	right: 30,
 });
 
-switchWindow.add(familySwitch);
+basicSwitch.addEventListener("change", function(e){
+	//Ti.API.info('Switch value: ' + basicSwitch.value)
+	if(basicSwitch.value === false){
+		rideList.text = "Rollercoasters!  Spider-man, The Incredible Hulk, The Mummy, Dueling Dragons, Rip Saw Falls, Jurassic Park.";
+	}else{
+		rideList.text = "Kiddy Rides!  The Cat in the Hat, E.T., Men In Black, Poseidon's Fury, Shrek, Twister, Disaster,";
+	}
+});
+
+
+switchWindow.add(basicSwitch, label, switchTitle, rideList);
 switchWindow.open();
+
+
 

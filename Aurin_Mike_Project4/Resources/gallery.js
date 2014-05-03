@@ -1,11 +1,12 @@
-galleryWindow = Ti.UI.createWindow({
-	backgroundColor: "#0465b2",
-	title: "Cant decide what to do next?"
+var currentWindow = Ti.UI.currentWindow;
+
+var galleryTitle = Ti.UI.createLabel({
+	color: "#0465b2",
+	font: {fontFamily: "Futura", fontSize: 26},
+	text: "Cant decide what to do next?",
+	top: 20
 });
 
-navWin = Ti.UI.iOS.createNavigationWindow({
-	window: galleryWindow
-});
 
 var imageArray = 
 	["gallery/et.jpg",
@@ -35,12 +36,12 @@ var imageArray =
 var imgs = Ti.UI.createImageView({
 		image: "",
 		width: "100%",
-		top: 100,
+		top: 160,
 		zIndex: 0
 		});
 
 changeButton = Ti.UI.createButton({
-	backgroundColor: "white",
+	backgroundColor: "#0465b2",
 	bottom: 0,
 	width: "200%",
 	title: "Choose My Next Ride!",
@@ -50,27 +51,34 @@ changeButton = Ti.UI.createButton({
 	
 });
 
-var backButton = Ti.UI.createLabel({
-	top: 0,
+var backButton = Ti.UI.createButton({
 	height: 50,
-	left: 5,
-	text: "< Home",
-	font: {fontFamily: "Futura", fontSize: 24},
-	color: "white",
-	textAlign: "center"
+	top: 70,
+	title: "Back to Main Menu",
+	width: "100%",
+	font: {fontFamily: "Futura", fontSize: 36},
+	color: "black",
+	backgroundColor: "#e1a60a",
+	textAlign: "center",
+	zIndex: 2
 });
 
 var closeGallery = function(){
 	var goHome = require("app");
 	mainWin.open();
-	navWin.close();
 };
 
 backButton.addEventListener("click", closeGallery);
 
 
+var prevNumberWas;
 var randomPictures = function(min, max){
-	return Math.floor(Math.random() * (max - min + 1) + min);
+	var noRepeat = Math.floor(Math.random() * (max - min + 1) + min);
+	while (prevNumberWas === noRepeat){
+		var noRepeat = Math.floor(Math.random() * (max - min + 1) + min);
+	}
+	prevNumberWas = noRepeat;
+	return noRepeat;
 	};
 
 changeButton.addEventListener('click', function (e) {
@@ -79,6 +87,5 @@ changeButton.addEventListener('click', function (e) {
     
     
 
-galleryWindow.add(changeButton, imgs, backButton);
-navWin.add(mainWin);
-navWin.open();
+currentWindow.add(changeButton, imgs, backButton, galleryTitle);
+currentWindow.open();

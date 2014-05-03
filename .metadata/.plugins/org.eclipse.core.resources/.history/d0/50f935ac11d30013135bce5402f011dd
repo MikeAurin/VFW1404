@@ -1,0 +1,31 @@
+var switchWindow = Ti.UI.createWindow({
+	backgroundColor: "#0465b2"
+});
+
+var label = Ti.UI.createLabel({
+	text: "Family Friendly Rides",
+	top: 50,
+	color: "white",
+	font: {fontFamily: "Futura", fontSize: 26},
+	left: 20
+});
+
+var basicSwitch = Ti.UI.createSwitch({
+	value: true,
+	top: 50,
+	right: 30
+});
+
+basicSwitch.addEventListener("change", function(e){
+	//Ti.API.info('Switch value: ' + basicSwitch.value)
+	if(basicSwitch.value === true){
+		switchWindow.backgroundColor = "#000";
+	}else{
+		switchWindow.backgroundColor = "#fff";
+	}
+});
+switchWindow.add(basicSwitch, label);
+switchWindow.open();
+
+
+
